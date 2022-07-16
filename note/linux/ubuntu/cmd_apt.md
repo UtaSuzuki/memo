@@ -26,13 +26,13 @@
 `sudo apt autoremove` | 不要になったパッケージを自動的に削除<br>(apt 実行時に表示されたときに実行)
 `sudo apt autoclean` | キャッシュされているが、インストールはされていない deb ファイルを削除
 `sudo apt full-upgrade` | ローカルリポジトリの内容を元に実際の更新処理を実行<br>(保留されているパッケージの更新時に使用)
-`sudo apt install [パッケージ | deb ファイル]` | パッケージや deb ファイルをインストール
+`sudo apt install [パッケージ \| deb ファイル]` | パッケージや deb ファイルをインストール
 `sudo apt remove [パッケージ]` | パッケージを削除
 `sudo apt remove --purge [パッケージ]` | パッケージを完全削除
 `sudo apt show [パッケージ]` | パッケージの詳細情報を表示
 `sudo apt list [パッケージ]` | パッケージを検索 (完全一致)
 `sudo apt search [パッケージ]` | パッケージを検索 (部分一致)
-`sudo apt list --installed | grep [パッケージ]` | パッケージを検索 (部分一致)
+`sudo apt list --installed \| grep [パッケージ]` | パッケージを検索 (部分一致)
 `sudo apt list --installed` | インストール済のパッケージ一覧を表示
 
 
