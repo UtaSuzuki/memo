@@ -12,9 +12,9 @@
 
 ## <a id="references"></a> 参考
 
-- [有限工房 | Ubuntuのaptコマンドの使い方](https://ygkb.jp/5393)
+- [有限工房: Ubuntuのaptコマンドの使い方](https://ygkb.jp/5393)
 
-- [Qiita: @SUZUKI_Masaya さん | aptコマンドチートシート](https://qiita.com/SUZUKI_Masaya/items/1fd9489e631c78e5b007)
+- [Qiita: @SUZUKI_Masaya さん: aptコマンドチートシート](https://qiita.com/SUZUKI_Masaya/items/1fd9489e631c78e5b007)
 
 
 ## <a id="cmd_list"></a> コマンド一覧
@@ -38,5 +38,5 @@
 
 ## <a id="cmd_log"></a> コマンドログ
 
-場所 : `/var/log/apt/history.log`
+場所: `/var/log/apt/history.log`
 

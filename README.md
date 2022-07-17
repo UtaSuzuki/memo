@@ -5,9 +5,9 @@
 
 ## 参考
 
-- [Qiita | @MahoTakara さん](https://qiita.com/MahoTakara)
+- [Qiita: @MahoTakara さん](https://qiita.com/MahoTakara)
 
-  - [GitHubを使ってMarkdown文書を５ステップでホームページとして公開する方法](https://qiita.com/MahoTakara/items/3800e9dc83b530d0a050)
+  - [Qiita: GitHubを使ってMarkdown文書を５ステップでホームページとして公開する方法](https://qiita.com/MahoTakara/items/3800e9dc83b530d0a050)
   
-  - [ここまで出来る! GitHubのMarkdownで書くウェブページ　独自テーマの開発](https://qiita.com/MahoTakara/items/e3d88a0d5d128bb07b27)
+  - [Qiita: ここまで出来る! GitHubのMarkdownで書くウェブページ　独自テーマの開発](https://qiita.com/MahoTakara/items/e3d88a0d5d128bb07b27)
 

@@ -13,6 +13,8 @@
 
 - [Ubuntu を起動](#boot_Ubuntu)
 
+- [Ubuntu をシャットダウン](#shutdown_Ubuntu)
+
 
 ## <a id="references"></a> 参考
 
@@ -55,19 +57,19 @@
 1. Linux 用 Windows サブシステムを有効化
 
   ```
-  dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
+  > dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
   ```
 
 1. 仮想マシンプラットフォームを有効化
 
   ```
-  dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
+  > dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
   ```
 
 1. WSL の既定バージョンを "2" に設定
 
   ```
-  wsl --set-default-version 2
+  > wsl --set-default-version 2
   ```
 
   ※ このとき、`WSL2 requires an update to its kernel component. For information please visit https://aka.ms/wsl2kernel` などと表示されたら、指示に従い、URL から Linux カーネル更新プログラムパッケージをダウンロードし、インストールする。
@@ -138,4 +140,15 @@
 
   $ lsb_release -a
   ```
+
+
+## <a id="shutdown_Ubuntu"></a> Ubuntu をシャットダウン
+
+```
+> wsl -l -v
+> wsl -t <DIST-NAME>
+> wsl -l -v
+```
+
+※ Ubuntu のコンソール上で `exit` (ターミナル終了) しても、`STOPPED` になる。
 

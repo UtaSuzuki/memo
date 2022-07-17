@@ -10,7 +10,7 @@
 
 ### 参考
 
-- [Vimで文字コードを指定する](https://qiita.com/bezeklik/items/2c9925f9c07762559471https://qiita.com/bezeklik/items/2c9925f9c07762559471)
+- [Qiita: Vimで文字コードを指定する](https://qiita.com/bezeklik/items/2c9925f9c07762559471https://qiita.com/bezeklik/items/2c9925f9c07762559471)
 
 ### 確認
 
@@ -41,3 +41,4 @@
 # short comannd
 :se fenc=[char set]
 ```
+
