@@ -64,14 +64,16 @@
 1. 現在の LS カラー設定ファイルを出力
 
   ```sh
-  dircolors -p ~/.dircolors
+  $ dircolors -p ~/.dircolors
   ```
 
-1. LS カラー設定ファイルを編集
+1. LS カラー設定ファイル (.dircolors) を編集
 
   以下は設定例
 
   ```sh
+  # .dircolors
+
   # ディレクトリの色
   DIR 01;36 # directory
 
@@ -84,15 +86,15 @@
 
 1. LS_COLORS 設定
 
-  `dircolors -b [設定ファイルパス]` で、LS_COLORS を設定するコードが出力されるので、以下を .bashrc に追記する
+  `$ dircolors -b [設定ファイルパス]` で、LS_COLORS を設定するコードが出力されるので、以下を .bashrc に追記する
 
   ```sh
-  eval $(dircolors -b ~/.bashrc)
+  $ eval $(dircolors -b ~/.bashrc)
   ```
 
 1. 設定を適用
 
   ```sh
-  source .bashrc
+  $ source .bashrc
   ```
 

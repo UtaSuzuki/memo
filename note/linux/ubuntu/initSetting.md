@@ -50,21 +50,7 @@ $ sudo apt install -y language-pack-ja
 $ sudo update-locale LANG=ja_JP.UTF-8
 ```
 
-再起動するために、Ubuntu で
-
-```sh
-$ exit
-```
-
-PowerShell で
-
-```
-> wsl -l -v
-> wsl -t <DIST-NAME>
-> wsl -l -v
-```
-
-スタートメニューから起動
+再起動
 
 日本語環境になってるか確認
 
