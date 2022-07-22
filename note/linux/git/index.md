@@ -76,6 +76,51 @@ $ git config --global alias.cm commit
 $ git config --global alias.ps push
 ```
 
+### git-completion.bash
+
+Git コマンドの補完スクリプト ([TAB] で補完できる)
+
+```sh
+$ wget https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash -O ~/.git-completion.bash
+$ chmod a+x ~/.git-completion.bash
+$ echo "source ~/.git-completion.bash" >> ~/.bashrc
+$ source ~/.bashrc
+```
+
+### git-prompt.sh
+
+プロンプトに各種追加情報を表示可能にするスクリプト
+
+```sh
+$ wget https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh -O ~/.git-prompt.sh
+$ chmod a+x ~/.git-prompt.sh
+$ echo "source ~/.git-prompt.sh" >> ~/.bashrc
+# ~/.bashrc 内の PS1 変数に __git_ps1 を追加
+$ vim ~/.bashrc
+$ source ~/.bashrc
+```
+
+### オプション (1 or null)
+
+- GIT_PS1_SHOWUPSTREAM
+
+  \> : 現在のブランチが upstream より進んでいるとき  
+  < : 現在のブランチが upstream より遅れているとき  
+  <> : 現在のブランチが upstream より遅れてるけど独自の変更もあるとき
+
+- GIT_PS1_SHOWUNTRACKEDFILES
+
+  % : 未ステージングの新規ファイルがあるとき (untracked)
+
+- GIT_PS1_SHOWSTASHSTATE
+
+  $ : stash になにか入っているとき (stashed)
+
+- GIT_PS1_SHOWDIRTYSTATE
+
+  \* : 未ステージングのファイルがあったとき (unstaged)  
+  \+ : ステージング済みで未コミットのファイルがあったとき (staged)
+
 
 ## <a id="alignmentGitHub"></a> GitHub と連携
 
