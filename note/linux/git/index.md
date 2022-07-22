@@ -103,17 +103,21 @@ $ source ~/.bashrc
 ### オプション (1 or null)
 
 - GIT_PS1_SHOWUPSTREAM
-  > : 現在のブランチが upstream より進んでいるとき  
+
+  \> : 現在のブランチが upstream より進んでいるとき  
   < : 現在のブランチが upstream より遅れているとき  
   <> : 現在のブランチが upstream より遅れてるけど独自の変更もあるとき
 
 - GIT_PS1_SHOWUNTRACKEDFILES
+
   % : 未ステージングの新規ファイルがあるとき (untracked)
 
 - GIT_PS1_SHOWSTASHSTATE
+
   $ : stash になにか入っているとき (stashed)
 
 - GIT_PS1_SHOWDIRTYSTATE
+
   \* : 未ステージングのファイルがあったとき (unstaged)  
   \+ : ステージング済みで未コミットのファイルがあったとき (staged)
 
