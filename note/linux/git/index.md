@@ -29,16 +29,51 @@ $ git config --global user.email "メールアドレス"
 # エディタを Vim に設定
 $ git config --global core.editor 'vim -c "set fenc=utf-8"'
 
-# git diff に色付け
-$ git config --global color.diff auto
-$ git config --global color.status auto
-$ git config --global color.branch auto
+# .gitignore を定義 (このファイルに書かれたものは Git 管理外とする)
+$ git config --global core.excludesfile ~/.gitignore
+
+# ファイル名の大文字小文字を区別
+$ git config --global core.ignorecase false
+
+# Mac-Linux 環境間での日本語ファイル名文字化け対策
+$ git config --global core.precomposeunicode = true
+
+# git status した際の日本語ファイル名文字化け対策
+$ git config --global core.quotepath = false
+
+# ページャの設定
+$ git config --global core.pager "less --no-init -iRMXF"
+
+# 色付け
+$ git config --global color.ui auto
 
 # push 方式を指定 (明示しないと警告される)
 $ git config --global push.default simple
 
-# git 認証情報を自動保存
-$ git config --global credential.helper store
+# git 認証情報を ~/.git-credentials に保存
+$ git config --global credential.helper store --file ~/.git-credentials
+
+# git difftool でファイル差分を見る際に使用するツール
+$ git config --global diff.tool vimdiff
+
+# git difftool を実行した時の Y/n の確認を表示しない
+$ git config --global difftool.prompt false
+
+# git mergetool でマージする際に使用するツール
+$ git config --global merge.tool vimdiff
+
+# git mergetool を実行した時の Y/n の確認を表示しない
+$ git config --global mergetool.prompt false
+
+# エイリアス設定
+$ git config --global alias.graph log --graph --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+$ git config --global alias.br branch
+$ git config --global alias.co checkout
+$ git config --global alias.st status
+$ git config --global alias.di diff
+$ git config --global alias.ad add
+$ git config --global alias.cm commit
+$ git config --global alias.ps push
 ```
 
 
