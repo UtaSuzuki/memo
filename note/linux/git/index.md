@@ -36,10 +36,10 @@ $ git config --global core.excludesfile ~/.gitignore
 $ git config --global core.ignorecase false
 
 # Mac-Linux 環境間での日本語ファイル名文字化け対策
-$ git config --global core.precomposeunicode = true
+$ git config --global core.precomposeunicode  true
 
 # git status した際の日本語ファイル名文字化け対策
-$ git config --global core.quotepath = false
+$ git config --global core.quotepath  false
 
 # ページャの設定
 $ git config --global core.pager "less --no-init -iRMXF"
@@ -51,7 +51,7 @@ $ git config --global color.ui auto
 $ git config --global push.default simple
 
 # git 認証情報を ~/.git-credentials に保存
-$ git config --global credential.helper store --file ~/.git-credentials
+$ git config --global credential.helper "store --file ~/.git-credentials"
 
 # git difftool でファイル差分を見る際に使用するツール
 $ git config --global diff.tool vimdiff
@@ -59,14 +59,14 @@ $ git config --global diff.tool vimdiff
 # git difftool を実行した時の Y/n の確認を表示しない
 $ git config --global difftool.prompt false
 
-# git mergetool でマージする際に使用するツール
+# コンフリクトしたファイルを git mergetool でマージする際に使用するツール
 $ git config --global merge.tool vimdiff
 
-# git mergetool を実行した時の Y/n の確認を表示しない
+# コンフリクトしたファイルに対して git mergetool を実行した時の Y/n の確認を表示しない
 $ git config --global mergetool.prompt false
 
 # エイリアス設定
-$ git config --global alias.graph log --graph --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+$ git config --global alias.graph "log --graph --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative"
 $ git config --global alias.br branch
 $ git config --global alias.co checkout
 $ git config --global alias.st status
