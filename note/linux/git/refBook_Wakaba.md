@@ -341,7 +341,7 @@ GitHub やその他多数の Web 企業で採用されている、シンプル�
 
 ![pull](img/pull.png)
 
-![fetch&merge](img/fetch&merge.png)
+![fetch&merge](img/fetchAndMerge.png)
 
 
 ## <a id="conflict"></a> コンフリクト
