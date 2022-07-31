@@ -13,6 +13,8 @@
 
 - [編集の流れ](#edittingFlow)
 
+- [Git について](aboutGit.md)
+
 
 ## <a id="references"></a> 参考
 
