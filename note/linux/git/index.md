@@ -13,7 +13,7 @@
 
 - [編集の流れ](#edittingFlow)
 
-- [Git について](aboutGit.md)
+- [【参考書】わかばちゃんと学ぶ Git 使い方入門](refBook_Wakaba.md)
 
 
 ## <a id="references"></a> 参考
@@ -77,6 +77,7 @@ $ git config --global alias.ad add
 $ git config --global alias.cm commit
 $ git config --global alias.ps push
 ```
+
 
 ### git-completion.bash
 
