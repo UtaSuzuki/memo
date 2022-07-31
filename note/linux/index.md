@@ -11,3 +11,5 @@
 
 - [Ubuntu](ubuntu/index.md)
 
+- [【参考書】新しい Linux の教科書](newLinuxTextbook/index.md)
+
