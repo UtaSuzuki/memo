@@ -1,4 +1,4 @@
-# わかばちゃんと学ぶ Git使い方入門
+# Git について
 
 ## 目次
 
@@ -82,7 +82,7 @@
 
 ### Web
 
-- [IT STAFFING - エンジニアスタイル | 【連載】マンガでわかるGit ～コマンド編～](https://www.r-staffing.co.jp/engineer/archive/category/%E3%83%9E%E3%83%B3%E3%82%AC%E3%83%BBGit)
+- [IT STAFFING - エンジニアスタイル :【連載】マンガでわかるGit ～コマンド編～](https://www.r-staffing.co.jp/engineer/archive/category/%E3%83%9E%E3%83%B3%E3%82%AC%E3%83%BBGit)
 
 ### 書籍
 
