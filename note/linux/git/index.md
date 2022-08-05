@@ -7,9 +7,9 @@
 
 - [初期設定](#initSetting)
 
-- [GitHub と連携](#alignmentGitHub)
-
 - [ローカルリポジトリを作成](#makeLocalRepo)
+
+- [GitHub と連携](#alignmentGitHub)
 
 - [編集の流れ](#edittingFlow)
 
@@ -125,37 +125,6 @@ $ source ~/.bashrc
   \+ : ステージング済みで未コミットのファイルがあったとき (staged)
 
 
-## <a id="alignmentGitHub"></a> GitHub と連携
-
-自分のアカウントページから `New` ボタンでリポジトリ作成
-
-以下を設定
-
-- Repository name
-- Description
-- Public / Private
-- Initialize this repository with a REDME (自分で用意するならチェック OFF)
-- Add .gitignore (自分で用意するなら None で OK)
-- Add a license (None で OK)
-
-リポジトリページでリポジトリ URL を控えておくと良い
-
-また、`push` 時は、アクセストークンが必要。
-（取得済み。忘れたときは、更新可能）
-
-ローカルリポジトリにリモートリポジトリを登録
-
-```sh
-# リモートリポジトリの URL をローカルリポジトリに登録 (origin として)
-$ git remote add origin [リポジトリ URL]
-
-# 確認
-$ git remote -v
-origin [リポジトリ URL] (fetch)
-origin [リポジトリ URL] (push)
-```
-
-
 ## <a id="makeLocalRepo"></a> ローカルリポジトリを作成
 
 ```sh
@@ -172,6 +141,91 @@ $ git log
 # プッシュ
 $ git push origin master
 ```
+
+
+## <a id="alignmentGitHub"></a> GitHub と連携
+
+1. Personal Access Token (PAT) を作成
+
+  - アカウントの「Settings」 > 「Developer settings」 > 「Personal access tokens」 をクリック  
+
+  - 名前を付ける (オススメ: [作成日]-[有効期限最終日])
+
+  - 「Expiration」で有効期限を設定 (目安: 6 ヶ月)
+
+  - 「Select scopes」で `repo` にチェック (最小権限 ?)
+
+  - 「Generate token」で作成
+
+1. SSH 接続設定
+
+  - 公開鍵・秘密鍵の作成
+
+    ```sh
+    # SSH 用ディレクトリの作成と設定
+    $ mkdir ~/.ssh
+    $ chmod 700 ~/.ssh
+    $ cd ~/.ssh
+
+    # 鍵生成 (暗号化方式: ed25519, コメント: 空)
+    $ ssh-keygen -t ed25519 -C ""
+    Generating public/private ed25519 key pair.
+    Enter file in which to save the key (/home/[Username]/.ssh/id_ed25519):    # 保存先パスを入力 (空でも OK)
+    Enter passphrase (empty for no passphrase):     # 暗号化用パスフレーズ入力 (非推奨だけど空でも OK)
+    Enter same passphrase again:                    # 確認入力
+    :
+    ```
+
+  - GitHub に登録
+
+    - 公開鍵の内容をクリップボードにコピー
+    - アカウントの「Setting」 > 「SSH and GPG keys」
+    - 「New SSH key」をクリック
+    - 「Title」に名前を入力 (秘密鍵を保存している端末が分かるような名前が良い)
+    - 「Key」にコピーした公開鍵の内容を貼付け
+    - 「Add SSH key」で登録
+
+  - ローカルでの設定
+
+    `~/.ssh/config` に情報を追加
+
+    ```
+    Host github github.com
+      HostName github.com
+      User git
+      IdentityFile [秘密鍵のプルパス]
+    ```
+
+  - 接続確認
+
+    ```sh
+    $ ssh -T [~/.ssh/config 内の Host 名]
+    ```
+
+1. リポジトリ作成
+
+  アカウントページの `New` ボタンで作成
+
+  以下を設定
+
+  - Repository name
+  - Description
+  - Public / Private
+  - Initialize this repository with a REDME (自分で用意するならチェック OFF)
+  - Add .gitignore (自分で用意するなら None で OK)
+  - Add a license (None で OK)
+
+1. ローカルリポジトリにリモートリポジトリを登録
+
+  ```sh
+  # リモートリポジトリの URL をローカルリポジトリに登録 (origin として)
+  $ git remote add origin [リポジトリ URL]
+
+  # 確認
+  $ git remote -v
+  origin [リポジトリ URL] (fetch)
+  origin [リポジトリ URL] (push)
+  ```
 
 
 ## <a id="edittingFlow"></a> 編集の流れ
