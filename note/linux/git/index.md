@@ -107,22 +107,22 @@ $ source ~/.bashrc
 
 - GIT_PS1_SHOWUPSTREAM
 
-  \> : 現在のブランチが upstream より進んでいるとき  
-  < : 現在のブランチが upstream より遅れているとき  
-  <> : 現在のブランチが upstream より遅れてるけど独自の変更もあるとき
+	\> : 現在のブランチが upstream より進んでいるとき  
+	< : 現在のブランチが upstream より遅れているとき  
+	<> : 現在のブランチが upstream より遅れてるけど独自の変更もあるとき
 
 - GIT_PS1_SHOWUNTRACKEDFILES
 
-  % : 未ステージングの新規ファイルがあるとき (untracked)
+	% : 未ステージングの新規ファイルがあるとき (untracked)
 
 - GIT_PS1_SHOWSTASHSTATE
 
-  $ : stash になにか入っているとき (stashed)
+	$ : stash になにか入っているとき (stashed)
 
 - GIT_PS1_SHOWDIRTYSTATE
 
-  \* : 未ステージングのファイルがあったとき (unstaged)  
-  \+ : ステージング済みで未コミットのファイルがあったとき (staged)
+	\* : 未ステージングのファイルがあったとき (unstaged)  
+	\+ : ステージング済みで未コミットのファイルがあったとき (staged)
 
 
 ## <a id="makeLocalRepo"></a> ローカルリポジトリを作成
@@ -145,155 +145,165 @@ $ git push origin master
 
 ## <a id="alignmentGitHub"></a> GitHub と連携
 
+注) GitHub に SSH キーを登録していると、Git のプロトコルは SSH になるっぽい。  
+→ `git remote -v` したときに、「http」とかだと PULL, PUSH に失敗する。
+
 1. Personal Access Token (PAT) を作成
 
-  - アカウントの「Settings」 > 「Developer settings」 > 「Personal access tokens」 をクリック  
+	- アカウントの「Settings」 > 「Developer settings」 > 「Personal access tokens」 をクリック  
 
-  - 名前を付ける (オススメ: [作成日]-[有効期限最終日])
+	- 名前を付ける (オススメ: [作成日]-[有効期限最終日])
 
-  - 「Expiration」で有効期限を設定 (目安: 6 ヶ月)
+	- 「Expiration」で有効期限を設定 (目安: 6 ヶ月)
 
-  - 「Select scopes」で `repo` にチェック (最小権限 ?)
+	- 「Select scopes」で `repo` にチェック (最小権限 ?)
 
-  - 「Generate token」で作成
+	- 「Generate token」で作成
 
 1. SSH 接続設定
 
-  - 公開鍵・秘密鍵の作成
+	- 公開鍵・秘密鍵の作成
 
-    ```sh
-    # SSH 用ディレクトリの作成と設定
-    $ mkdir ~/.ssh
-    $ chmod 700 ~/.ssh
-    $ cd ~/.ssh
+		```sh
+		# SSH 用ディレクトリの作成と設定
+		$ mkdir ~/.ssh
+		$ chmod 700 ~/.ssh
+		$ cd ~/.ssh
 
-    # 鍵生成 (暗号化方式: ed25519, コメント: 空)
-    $ ssh-keygen -t ed25519 -C ""
-    Generating public/private ed25519 key pair.
-    Enter file in which to save the key (/home/[Username]/.ssh/id_ed25519):    # 保存先パスを入力 (空でも OK)
-    Enter passphrase (empty for no passphrase):     # 暗号化用パスフレーズ入力 (非推奨だけど空でも OK)
-    Enter same passphrase again:                    # 確認入力
-    :
-    ```
+		# 鍵生成 (暗号化方式: ed25519, コメント: 空)
+		$ ssh-keygen -t ed25519 -C ""
+		Generating public/private ed25519 key pair.
+		Enter file in which to save the key (/home/[Username]/.ssh/id_ed25519):    # 保存先パスを入力 (空でも OK)
+		Enter passphrase (empty for no passphrase):     # 暗号化用パスフレーズ入力 (非推奨だけど空でも OK)
+		Enter same passphrase again:                    # 確認入力
+		:
+		```
 
-  - GitHub に登録
+	- GitHub に登録
 
-    - 公開鍵の内容をクリップボードにコピー
-    - アカウントの「Setting」 > 「SSH and GPG keys」
-    - 「New SSH key」をクリック
-    - 「Title」に名前を入力 (秘密鍵を保存している端末が分かるような名前が良い)
-    - 「Key」にコピーした公開鍵の内容を貼付け
-    - 「Add SSH key」で登録
+		- 公開鍵の内容をクリップボードにコピー
+		- アカウントの「Setting」 > 「SSH and GPG keys」
+		- 「New SSH key」をクリック
+		- 「Title」に名前を入力 (秘密鍵を保存している端末が分かるような名前が良い)
+		- 「Key」にコピーした公開鍵の内容を貼付け
+		- 「Add SSH key」で登録
 
-  - ローカルでの設定
+	- ローカルでの設定
 
-    `~/.ssh/config` に情報を追加
+		`~/.ssh/config` に情報を追加
 
-    ```
-    Host github github.com
-      HostName github.com
-      User git
-      IdentityFile [秘密鍵のプルパス]
-    ```
+		```
+		Host github github.com
+		  HostName github.com
+		  User git
+		  IdentityFile [秘密鍵のプルパス]
+		```
 
-  - 接続確認
+	- 接続確認
 
-    ```sh
-    $ ssh -T [~/.ssh/config 内の Host 名]
-    ```
+		```sh
+		$ ssh -T [~/.ssh/config 内の Host 名]
+		```
 
 1. リポジトリ作成
 
-  アカウントページの `New` ボタンで作成
+	アカウントページの `New` ボタンで作成
 
-  以下を設定
+	以下を設定
 
-  - Repository name
-  - Description
-  - Public / Private
-  - Initialize this repository with a REDME (自分で用意するならチェック OFF)
-  - Add .gitignore (自分で用意するなら None で OK)
-  - Add a license (None で OK)
+	- Repository name
+	- Description
+	- Public / Private
+	- Initialize this repository with a REDME (自分で用意するならチェック OFF)
+	- Add .gitignore (自分で用意するなら None で OK)
+	- Add a license (None で OK)
 
 1. ローカルリポジトリにリモートリポジトリを登録
 
-  ```sh
-  # リモートリポジトリの URL をローカルリポジトリに登録 (origin として)
-  $ git remote add origin [リポジトリ URL]
+	```sh
+	# リモートリポジトリの URL をローカルリポジトリに登録 (origin として)
+	## !!! SSH キーを登録している場合は、プロトコルを「SSH」にすること !!!
+	$ git remote add origin [リポジトリ URL]
 
-  # 確認
-  $ git remote -v
-  origin [リポジトリ URL] (fetch)
-  origin [リポジトリ URL] (push)
-  ```
+	# 確認
+	$ git remote -v
+	origin [リポジトリ URL] (fetch)
+	origin [リポジトリ URL] (push)
+	```
+
+	※ リモート登録後に変更する方法
+
+	```sh
+	$ git remote set-url <リモート名> <変更したい URL>
+	```
 
 
 ## <a id="edittingFlow"></a> 編集の流れ
 
 1. ブランチ作成
 
-  命名規則 : `[タグ]_[概要]`
+	命名規則 : `[タグ]_[概要]`
 
-  タグ | 説明
-  ---|---
-  release | 新規開発など
-  feature | 機能変更など
-  hotfix | バグ修正など
+	タグ | 説明
+	---|---
+	release | 新規開発など
+	feature | 機能変更など
+	hotfix | バグ修正など
 
-  ```sh
-  # ブランチ作成 & チェックアウト
-  $ git checkout -b "ブランチ名"
+	```sh
+	# ブランチ作成 & チェックアウト
+	$ git checkout -b "ブランチ名"
 
-  # 確認
-  $ git branch
-  ```
+	# 確認
+	$ git branch
+	```
 
 1. リモートの更新を適用
 
-  ```sh
-  # fetch と merger を個別に実行
-  #$ git fetch origin master
-  #$ git merge origin/master
+	```sh
+	# fetch と merger を個別に実行
+	#$ git fetch origin master
+	#$ git merge origin/master
 
-  # 一括で適用
-  $ git pull
-  ```
+	# 一括で適用
+	$ git pull
+	```
 
 1. ファイル編集
 
-  Vim などでファイル編集
+	Vim などでファイル編集
 
 1. リモートリポジトリに適用
 
-  コミットメッセージ規則 : `[タグ]_[概要]`
+	コミットメッセージ規則 : `[タグ]_[概要]`
 
-  タグ | 説明
-  ---|---
-  new | 新規
-  mod | 変更 (機能の変更や追加)
-  fix | 修正 (バグなどの機能追加を含まないもの)
+	タグ | 説明
+	---|---
+	new | 新規
+	mod | 変更 (機能の変更や追加)
+	fix | 修正 (バグなどの機能追加を含まないもの)
 
-  ```sh
-  # ローカルリポジトリの状態確認
-  $ git status
+	```sh
+	# ローカルリポジトリの状態確認
+	$ git status
 
-  # ステージング (すべてをステージングの
-  ## 任意の更新ファイルをステージング
-  $ git add [更新ファイル]
-  ## すべての更新ファイルをステージング
-  $ git add .
+	# ステージング (すべてをステージングの
+	## 任意の更新ファイルをステージング
+	$ git add [更新ファイル]
+	## すべての更新ファイルをステージング
+	$ git add .
 
-  # ステージング確認
-  $ git status
+	# ステージング確認
+	$ git status
 
-  # コミット
-  $ git commit -m "コミットメッセージ"
+	# コミット
+	$ git commit -m "コミットメッセージ"
 
-  # コミット確認
-  $ git status
-  $ git log --oneline -10
+	# コミット確認
+	$ git status
+	$ git log --oneline -10
 
-  # プッシュ
-  $ git push origin [ブランチ名]
-  ```
+	# プッシュ
+	$ git push origin [ブランチ名]
+	```
 
