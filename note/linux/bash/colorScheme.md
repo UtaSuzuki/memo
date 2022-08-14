@@ -63,38 +63,38 @@
 
 1. 現在の LS カラー設定ファイルを出力
 
-  ```sh
-  $ dircolors -p ~/.dircolors
-  ```
+	```sh
+	dircolors -p ~/.dircolors
+	```
 
 1. LS カラー設定ファイル (.dircolors) を編集
 
-  以下は設定例
+	以下は設定例
 
-  ```sh
-  # .dircolors
+	```sh
+	# .dircolors
 
-  # ディレクトリの色
-  DIR 01;36 # directory
+	# ディレクトリの色
+	DIR 01;36 # directory
 
-  # リンクの色
-  LINK 01;32 # symbolic link. (If you set this to 'target' instead of a
+	# リンクの色
+	LINK 01;32 # symbolic link. (If you set this to 'target' instead of a
 
-  # other user の書き込み権限が付いたディレクトリの色
-  OTHER_WRITABLE 01;36 # dir that is other-writable (o+w) and not sticky
-  ```
+	# other user の書き込み権限が付いたディレクトリの色
+	OTHER_WRITABLE 01;36 # dir that is other-writable (o+w) and not sticky
+	```
 
 1. LS_COLORS 設定
 
-  `$ dircolors -b [設定ファイルパス]` で、LS_COLORS を設定するコードが出力されるので、以下を .bashrc に追記する
+	`dircolors -b [設定ファイルパス]` で、LS_COLORS を設定するコードが出力されるので、以下を .bashrc に追記する
 
-  ```sh
-  $ eval $(dircolors -b ~/.bashrc)
-  ```
+	```sh
+	eval $(dircolors -b ~/.bashrc)
+	```
 
 1. 設定を適用
 
-  ```sh
-  $ source .bashrc
-  ```
+	```sh
+	source .bashrc
+	```
 

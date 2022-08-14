@@ -5,7 +5,7 @@ Vim の使い方について。
 チュートリアル :
 
 ```shell
-$ vimtutor
+vimtutor
 ```
 
 ヘルプ表示 :

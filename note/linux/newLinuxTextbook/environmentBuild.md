@@ -1,13 +1,15 @@
 # 環境構築
 
+
 ## 目次
 
 1. [ホームディレクトリ配下を日本語名から英語名に変更](#changeLangOnHome)
 
+
 ## <a id="changeLangOnHome"></a> ホームディレクトリ配下を日本語名から英語名に変更
 
 ```shell
-$ LANG=C xdg-user-dirs-gtk-update
+LANG=C xdg-user-dirs-gtk-update
 ```
 
 実行後に表示されるダイアログで  
