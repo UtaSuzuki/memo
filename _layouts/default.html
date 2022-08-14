@@ -1,99 +1,104 @@
 <!doctype html>
 <!---
-this default.html is based on
-https://github.com/pages-themes/dinky
+    this default.html is based on
+    https://github.com/pages-themes/dinky
 -->
 
 <html lang="{{ site.lang | default: "ja-JP" }}">
 
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    {% seo %}
-    <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
-    <script src="{{ '/assets/js/scale.fix.js' | relative_url }}"></script>
-    <link type="text/css" rel="stylesheet" href="{{ '/assets/css/prmenu.css' | relative_url }}" />
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="chrome=1">
+        {% seo %}
+        <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
+        <script src="{{ '/assets/js/scale.fix.js' | relative_url }}"></script>
+        <link type="text/css" rel="stylesheet" href="{{ '/assets/css/prmenu.css' | relative_url }}" />
 
-    <style>
-      body {
-      margin: 0;
-      padding: 0;
-      }
-    </style>
-  </head>
+        <style>
+            body {
+                margin: 0;
+                padding: 0;
+            }
+        </style>
+    </head>
 
-  <body>
-    <!------------ メニューバー (開始)------------->
-    <script src="{{ '/assets/js/jquery-3.2.1.min.js' | relative_url }}"></script>
-    <script src="{{ '/assets/js/jquery.prmenu.min.js' | relative_url }}"></script>
-    <script>
-      $(document).ready(function(){
-        $('#top-menu').prmenu();
-        });
-    </script>
+    <body>
+        <!------------ メニューバー (開始)------------->
+        <script src="{{ '/assets/js/jquery-3.2.1.min.js' | relative_url }}"></script>
+        <script src="{{ '/assets/js/jquery.prmenu.min.js' | relative_url }}"></script>
+        <script>
+            $(document).ready(function(){
+                $('#top-menu').prmenu();
+            });
+        </script>
 
-    <ul id="top-menu">
-      <li><a href="{{ '/' | relative_url }}">HOME</a></li>
-      <li><a href="{{ '/note' | relative_url }}">MY NOTE</a>
-        <ul>
-          <li><a href="{{ '/note/linux' | relative_url }}">Linux</a>
-            <ul>
-              <li><a href="{{ '/note/linux/bash' | relative_url }}">Bash</a></li>
-              <li><a href="{{ '/note/linux/git' | relative_url }}">Git</a></li>
-              <li><a href="{{ '/note/linux/vim' | relative_url }}">Vim</a></li>
-              <li><a href="{{ '/note/linux/ubuntu' | relative_url }}">Ubuntu</a></li>
-            </ul>
-          </li>
-          <li><a href="{{ '/note/windows' | relative_url }}">Windows</a></li>
-          <li><a href="{{ '/note/general' | relative_url }}">全般</a></li>
+        <ul id="top-menu">
+            <li><a href="{{ '/' | relative_url }}">HOME</a></li>
+            <li><a href="{{ '/note' | relative_url }}">MY NOTE</a>
+                <ul>
+                    <li><a href="{{ '/note/linux' | relative_url }}">Linux</a>
+                        <ul>
+                            <li><a href="{{ '/note/linux/bash' | relative_url }}">Bash</a></li>
+                            <li><a href="{{ '/note/linux/git' | relative_url }}">Git</a></li>
+                            <li><a href="{{ '/note/linux/vim' | relative_url }}">Vim</a></li>
+                            <li><a href="{{ '/note/linux/ubuntu' | relative_url }}">Ubuntu</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="{{ '/note/microsoft' | relative_url }}">Microsoft</a>
+                        <ul>
+                            <li><a href="{{ '/note/microsoft/windows' | relative_url }}">Windows</a></li>
+                            <li><a href="{{ '/note/microsoft/vba' | relative_url }}">VBA</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="{{ '/note/general' | relative_url }}">全般</a></li>
+                </ul>
+            </li>
+            <li><a href="#">メニュー #2</a>
+                <ul>
+                    <li><a href="#">サブメニュー #2-1</a>
+                        <ul>
+                            <li><a href="#">サブアイテム #2-1-1</a></li>
+                            <li><a href="#">サブアイテム #2-1-2</a></li>
+                            <li><a href="#">サブアイテム #2-1-3</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">サブメニュー #2-2</a></li>
+                </ul>
+            </li>
+            <li><a href="#">メニュー #3</a></li>
+            <li><a href="#">メニュー #4</a></li>
         </ul>
-      </li>
-      <li><a href="#">メニュー #2</a>
-        <ul>
-          <li><a href="#">サブメニュー #2-1</a>
-            <ul>
-              <li><a href="#">サブアイテム #2-1-1</a></li>
-              <li><a href="#">サブアイテム #2-1-2</a></li>
-              <li><a href="#">サブアイテム #2-1-3</a></li>
-            </ul>
-          </li>
-          <li><a href="#">サブメニュー #2-2</a></li>
-        </ul>
-      </li>
-      <li><a href="#">メニュー #3</a></li>
-      <li><a href="#">メニュー #4</a></li>
-    </ul>
-    <!------------ メニューバー (修了)------------->
+        <!------------ メニューバー (修了)------------->
 
 
-    <div class="wrapper">
-      <!-- ヘッド -->
-      <!-- <header> -->
-      <!--   <h1 class="header">{{ site.title | default: site.github.repository_name }}</h1> -->
-      <!--   <p class="header">{{ site.description | default: site.github.project_tagline }}</p> -->
-      <!-- </header> -->
+        <div class="wrapper">
+            <!-- ヘッド -->
+            <!-- <header> -->
+            <!--   <h1 class="header">{{ site.title | default: site.github.repository_name }}</h1> -->
+            <!--   <p class="header">{{ site.description | default: site.github.project_tagline }}</p> -->
+            <!-- </header> -->
 
-      <!-- サブ・ディレクトリへのリンク -->
-      <!-- <sidemenu> -->
-      <!--   <ul> -->
-      <!--     <li class="sidemenu"><a href="{{ '/' | relative_url }}">トップページ</a></li> -->
-      <!--     <li class="sidemenu"><a href="{{ '/sub1' | relative_url }}">サブアイテム #1</a></li> -->
-      <!--     <li class="sidemenu"><a href="{{ '/sub2' | relative_url }}">サブアイテム #2</a></li> -->
-      <!--     <li class="sidemenu"><a href="{{ '/sub3' | relative_url }}">サブアイテム #3</a></li> -->
-      <!--   </ul> -->
-      <!-- </sidemenu> -->
+            <!-- サブ・ディレクトリへのリンク -->
+            <!-- <sidemenu> -->
+            <!--   <ul> -->
+            <!--     <li class="sidemenu"><a href="{{ '/' | relative_url }}">トップページ</a></li> -->
+            <!--     <li class="sidemenu"><a href="{{ '/sub1' | relative_url }}">サブアイテム #1</a></li> -->
+            <!--     <li class="sidemenu"><a href="{{ '/sub2' | relative_url }}">サブアイテム #2</a></li> -->
+            <!--     <li class="sidemenu"><a href="{{ '/sub3' | relative_url }}">サブアイテム #3</a></li> -->
+            <!--   </ul> -->
+            <!-- </sidemenu> -->
 
-      <!--  Markdown の本体 -->
-      <section>
-        {{ content }}
-      </section>
+            <!--  Markdown の本体 -->
+            <section>
+                {{ content }}
+            </section>
 
-      <footer>
-        <p><small>Hosted on <a href="https://pages.github.com">GitHub Pages</a> using the Dinky theme</small></p>
-        <p><a class="buttons github" href="{{ site.github.repository_url }}">View On GitHub</a></p>
-      </footer>
-    </div>
-  </body>
+            <footer>
+                <p><small>Hosted on <a href="https://pages.github.com">GitHub Pages</a> using the Dinky theme</small></p>
+                <p><a class="buttons github" href="{{ site.github.repository_url }}">View On GitHub</a></p>
+            </footer>
+        </div>
+    </body>
 
 </html>
 

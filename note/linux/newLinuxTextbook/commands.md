@@ -6,9 +6,9 @@
 
 - [コマンドの検索方法](#howtoUseCommands)
 
-  - [--help オプション](#helpOption)
+	- [--help オプション](#helpOption)
 
-  - [man (マニュアルを表示する)](#man)
+	- [man (マニュアルを表示する)](#man)
 
 - [cp (ファイルコピー)](#cp)
 
@@ -32,9 +32,9 @@
 
 - [bash (シェルを bash に切り替え)](#bash)
 
-  - [set (bash オプションを切り替える)](#set)
+	- [set (bash オプションを切り替える)](#set)
 
-  - [shopt (bash オプションを切り替える)](#shopt)
+	- [shopt (bash オプションを切り替える)](#shopt)
 
 - [ping (疎通確認)](#ping)
 
@@ -58,39 +58,39 @@
 
 - [ln (リンクを貼る)](#ln)
 
-  - [リンクとは](#whatLink)
+	- [リンクとは](#whatLink)
 
-  - [ハードリンク](#hardLink)
+	- [ハードリンク](#hardLink)
 
-  - [シンボリックリンク](#symbolicLink)
+	- [シンボリックリンク](#symbolicLink)
 
-  - [リンクの利用方法](#howToUseLink)
+	- [リンクの利用方法](#howToUseLink)
 
 - [find (ディレクトリツリーからファイルを探す)](#find)
 
-  - [ファイル名で探す (-name, -iname)](#findOption_name)
+	- [ファイル名で探す (-name, -iname)](#findOption_name)
 
-  - [ファイルの種類で探す (-type)](#findOption_type)
+	- [ファイルの種類で探す (-type)](#findOption_type)
 
-  - [複数の検索条件の指定 (-a)](#findOption_a)
+	- [複数の検索条件の指定 (-a)](#findOption_a)
 
 - [locate (ファイル名データベースからファイルを探す](#locate)
 
-  - [locate コマンドのインストール](#installLocate)
+	- [locate コマンドのインストール](#installLocate)
 
-  - [locate コマンドを使ったファイル検索](#fileSearchUsingLocate)
+	- [locate コマンドを使ったファイル検索](#fileSearchUsingLocate)
 
 - [which (コマンドのフルパスを表示する)](#which)
 
 - [alias (既存のコマンドに別名を付ける)](#alias)
 
-  - [type (コマンドかエイリアスか確認)](#type)
+	- [type (コマンドかエイリアスか確認)](#type)
 
-  - [unalias (エイリアスの削除)](#unalias)
+	- [unalias (エイリアスの削除)](#unalias)
 
-  - [一時的にエイリアスを解除する](#temporarilyRemoveTheAlias)
+	- [一時的にエイリアスを解除する](#temporarilyRemoveTheAlias)
 
-  - [command (エイリアスや関数以外のコマンドを実行)](#command)
+	- [command (エイリアスや関数以外のコマンドを実行)](#command)
 
 - [locale (ロケールに関するコマンド)](#locale)
 
@@ -119,21 +119,21 @@
 オプションはコマンド名の後ろに、スペース区切りで指定する。
 
 ```shell
-$ ls -a
+ls -a
 ```
 
 オプションを複数指定する場合、別々にスペース区切りで書くことも、`-` の後ろにまとめて書くこともできる。  
 以下の方法はどちらも同じように動作する
 
 ```shell
-$ ls -a -F
-$ ls -aF
+ls -a -F
+ls -aF
 ```
 
 コマンドの引数とオプションを同時に指定する場合、先にオプションを書き、後にコマンドへの引数を書く。
 
 ```shell
-$ ls -aF /
+ls -aF /
 ```
 
 ### 引数を取るオプション
@@ -143,8 +143,8 @@ $ ls -aF /
 以下の方法はどちらも同じように動作する
 
 ```shell
-$ ls -w 30 /
-$ ls -w30 /
+ls -w 30 /
+ls -w30 /
 ```
 
 ### ロングオプション
@@ -156,14 +156,14 @@ $ ls -w30 /
 以下は、ファイル名を `""` で囲んで表示するオプションの例
 
 ```shell
-$ ls -w 40 --quote-name /
+ls -w 40 --quote-name /
 "bin"   "home"   "mnt"   "run"   "tmp"
 "boot"  "lib"    "opt"   "sbin"  "usr"
 "deb"   "lib64"  "proc"  "srv"   "var"
 "etc"   "media"  "root"  "sys"
 
 # 以下は同じ動作
-$ ls --width=40 --quote /
+ls --width=40 --quote /
 ```
 
 ## <a id="howtoUseCommands"></a> コマンドの検索方法
@@ -182,17 +182,17 @@ $ ls --width=40 --quote /
 - その他の参考資料の紹介
 
 ```shell
-$ [コマンド] --help
+[コマンド] --help
 ```
 
 英語 / 日本語で表示する
 
 ```shell
 # 日本語設定になっていない環境で、日本語表示させる場合
-$ LANG=ja_JP.UTF-8 <コマンド> --help
+LANG=ja_JP.UTF-8 <コマンド> --help
 
 # Linux のデフォルト言語 (英語) で表示させる場合
-$ LANG=C <コマンド> --help
+LANG=C <コマンド> --help
 ```
 
 ※ この指定方法は、その他のコマンドでも利用できる。  
@@ -221,14 +221,14 @@ $ LANG=C <コマンド> --help
 バグ | 不具合について
 
 ```shell
-$ man <調べたいコマンド>
+man <調べたいコマンド>
 ```
 
 キーワードから逆引き  
 以下のようにすると、コマンド名は分からないけど「こんなことがしたい」という場合にも検索できる
 
 ```shell
-$ man -k <キーワード>
+man -k <キーワード>
 ```
 
 セクション番号  
@@ -252,13 +252,13 @@ $ man -k <キーワード>
 省略した場合は、セクション番号が最も若いものが表示される。
 
 ```shell
-$ man <セクション番号> <名前>
+man <セクション番号> <名前>
 ```
 
 特定のマニュアルページがどのセクションに含まれるかを調べるには
 
 ```shell
-$ man -wa <名前>
+man -wa <名前>
 ```
 
 ## <a id="cp"></a> cp (copy) コマンド (ファイルコピー)
@@ -269,20 +269,20 @@ $ man -wa <名前>
 この場合、引数の最後に指定したディレクトリにファイルがコピーされる。
 
 ```shell
-$ cp [オプション] <コピー元> ... <コピー先>
+cp [オプション] <コピー元> ... <コピー先>
 ```
 
 上書き確認をする
 
 ```shell
-$ cp -i <コピー元> ... <コピー先>
+cp -i <コピー元> ... <コピー先>
 ```
 
 ディレクトリをコピーする  
 再帰的にコピーする必要があり、`-r` オプションが必要。  
 
 ```shell
-$ cp -r <コピー元> ... <コピー先>
+cp -r <コピー元> ... <コピー先>
 ```
 
 ## <a id="ls"></a> ls (list) コマンド (ディレクトリ内容の一覧表示)
@@ -290,7 +290,7 @@ $ cp -r <コピー元> ... <コピー先>
 カレントディレクトリのファイルとディレクトリを表示
 
 ```shell
-$ ls
+ls
 ダウンロード  デスクトップ  ビデオ  画像
 テンプレート  ドキュメント  音楽    公開
 ```
@@ -298,7 +298,7 @@ $ ls
 ファイル (/usr/tmp) の詳細情報を表示
 
 ```shell
-$ ls -l /usr/tmp
+ls -l /usr/tmp
 lrwxrwxrwx. 1 root root 10  4月 30 14:33 /usr/tmp -> ../var/tmp
 
 # 左から、
@@ -322,7 +322,7 @@ lrwxrwxrwx. 1 root root 10  4月 30 14:33 /usr/tmp -> ../var/tmp
 隠しファイルも含めたすべてのファイルを表示
 
 ```shell
-$ ls -a
+ls -a
 .              .cache     .vboxclient-clipboard.pid         テンプレート
 ..             .config    .vboxclient-display-svga-x11.pid  デスクトップ
 .ICEauthority  .dbus      .vboxclient-draganddrop.pid       ドキュメント
@@ -335,7 +335,7 @@ $ ls -a
 ファイル名の後ろにファイルの種類を表す記号を追加して表示
 
 ```shell
-$ ls -F /usr
+ls -F /usr
 bin/  games/    lib/    libexec/  sbin/   src/
 etc/  include/  lib64/  local/    share/  tmp@
 
@@ -349,7 +349,7 @@ etc/  include/  lib64/  local/    share/  tmp@
 指定した数値の横幅で表示
 
 ```shell
-$ ls -w 30 /
+ls -w 30 /
 bin   home   mnt   run   tmp
 boot  lib    opt   sbin  usr
 deb   lib64  proc  srv   var
@@ -359,7 +359,7 @@ etc   media  root  sys
 あるディレクトリから、ファイル名が a から始まるファイルを一覧表示
 
 ```shell
-$ ls a*
+ls a*
 ```
 
 ## <a id="grep"></a> grep コマンド (ファイル内容の検索)
@@ -367,7 +367,7 @@ $ ls a*
 sample.txt というファイルから "abc" という文字列を含む行を検索し、その結果をソートして表示
 
 ```shell
-$ grep "abc" sample.txt | sort
+grep "abc" sample.txt | sort
 ```
 
 ## <a id="sort"></a> sort コマンド (並べ替え)
@@ -375,11 +375,11 @@ $ grep "abc" sample.txt | sort
 標準入力の内容を、行ごとに並び替え手表示
 
 ```shell
-$ cat file1
+cat file1
 cba
 bca
 abc
-$ cat file1 | sort
+cat file1 | sort
 abc
 bca
 cba
@@ -391,7 +391,7 @@ cba
 (現在のシェルを終了させ、自動的にログアウトされる)
 
 ```shell
-$ exit
+exit
 ```
 
 ## <a id="logout"></a> logout コマンド (ログアウト)
@@ -399,7 +399,7 @@ $ exit
 現在のシェルがログインシェルの場合のログアウト
 
 ```shell
-$ logout
+logout
 ```
 
 ## <a id="shutdown"></a> shutdown コマンド (シャットダウン)
@@ -429,7 +429,7 @@ $ logout
 現在時刻を表示
 
 ```shell
-$ date
+date
 2022年  5月  1日 日曜日 16:47:23 JST
 ```
 
@@ -438,14 +438,14 @@ $ date
 指定の文字列を表示
 
 ```shell
-$ echo Hello
+echo Hello
 Hello
 ```
 
 ログインシェルを確認
 
 ```shell
-$ echo $SHELL
+echo $SHELL
 /bin/bash
 ```
 
@@ -454,7 +454,7 @@ $ echo $SHELL
 シェルを一時的に `sh` に切り替え
 
 ```shell
-[yuta@localhost ~]$ sh
+[yuta@localhost ~]sh
 sh-4.2$
 ```
 
@@ -463,7 +463,7 @@ sh-4.2$
 シェルを一時的に `bash` に切り替え
 
 ```shell
-sh-4.2$ bash
+sh-4.2bash
 [yuta@localhost ~]$
 ```
 
@@ -472,7 +472,7 @@ sh-4.2$ bash
 `-o` と `+o` でオプションのオン / オフを指定する。
 
 ```shell
-$ set -o/+o <オプション名>
+set -o/+o <オプション名>
 ```
 
 `-o` で指定するとオプションが「**<span style="color:red">オン</span>**」  
@@ -482,8 +482,8 @@ $ set -o/+o <オプション名>
 ignoreeof (`Ctrl + D` を無視する設定) オプションをオンに設定する例
 
 ```shell
-$ set -o ignoreeof
-$     # ここで Ctrl + D を入力しても、
+set -o ignoreeof
+    # ここで Ctrl + D を入力しても、
 シェルから脱出するには "logout" を使用してください。    # シェルが終了しない
 $
 ```
@@ -503,7 +503,7 @@ noglob | パス名展開を無効にする (`*` や `?` などはシェルに解
 `set` コマンド同様に、bash のオプションのオン / オフを切り替えるコマンド
 
 ```shell
-$ shopt -s/-u <オプション名>
+shopt -s/-u <オプション名>
 ```
 
 `-s` で指定したオプションを「**<span style="color:red">オン</span>**」  
@@ -530,7 +530,7 @@ histappend | bash を終了するとき、履歴ファイルにコマンド履�
 (4 回目で `Ctrl + C` で強制終了)
 
 ```shell
-$ ping 192.168.122.1
+ping 192.168.122.1
 PING 192.168.122.1 (192.168.122.1) 56(84) bytes of data.
 64 bytes from 192.168.122.1: icmp_seq=1 ttl=64 time=0.065 ms
 64 bytes from 192.168.122.1: icmp_seq=2 ttl=64 time=0.107 ms
@@ -547,7 +547,7 @@ rtt min/avg/max/mdev = 0.050/0.081/0.107/0.026 ms
 カレントディレクトリの絶対パスを表示
 
 ```shell
-$ pwd
+pwd
 /home/yuta
 ```
 
@@ -556,29 +556,29 @@ $ pwd
 カレントディレクトリを変更
 
 ```shell
-$ cd /usr
+cd /usr
 ```
 
 シンボリックリンク (/usr/tmp) のターゲットに移動
 
 ```shell
-$ cd -P /usr/tmp
-$ pwd
+cd -P /usr/tmp
+pwd
 /var/tmp
 ```
 
 シンボリックリンク (/usr/tmp) に移動
 
 ```shell
-$ cd -L /usr/tmp
-$ pwd
+cd -L /usr/tmp
+pwd
 /usr/tmp
 ```
 
 ## <a id="mkdir"></a> mkdir (make directory) コマンド (ディレクトリ作成)
 
 ```shell
-$ mkdir [オプション] <ディレクトリ名>
+mkdir [オプション] <ディレクトリ名>
 ```
 
 注意 :
@@ -601,25 +601,25 @@ mkdir -p report/2022/05
 ファイルを作成する
 
 ```shell
-$ touch <ファイル名> (<ファイル名> ...)
+touch <ファイル名> (<ファイル名> ...)
 ```
 
 ## <a id="rm"></a> rm (remove) コマンド (ファイル削除)
 
 ```shell
-$ rm [オプション] <ファイル名> (<ファイル名> ...)
+rm [オプション] <ファイル名> (<ファイル名> ...)
 ```
 
 ディレクトリを削除する場合は、**再帰的にディレクトリツリーを削除する `-r` オプション** を指定する
 
 ```shell
-$ rm -r <ディレクトリ名>
+rm -r <ディレクトリ名>
 ```
 
 本当に削除する前に、削除確認をする
 
 ```shell
-$ rm -i <ファイル名>
+rm -i <ファイル名>
 ```
 
 ## <a id="rmdir"></a> rmdir (remove directory) コマンド (ディレクトリ削除)
@@ -628,7 +628,7 @@ $ rm -i <ファイル名>
 中にファイルがあるディレクトリを削除しようとするとエラーになる。
 
 ```shell
-$ rmdir <ディレクトリ名>
+rmdir <ディレクトリ名>
 ```
 
 ## <a id="cat"></a> cat (concatenate and print files) コマンド (ファイル内容を表示)
@@ -637,25 +637,25 @@ $ rmdir <ディレクトリ名>
 ファイルの中身を表示するコマンドとして使われることが多い。
 
 ```shell
-$ cat [オプション] <ファイル名>
+cat [オプション] <ファイル名>
 ```
 
 ファイルを連結して表示
 
 ```shell
-$ cat <ファイル1> <ファイル2>
+cat <ファイル1> <ファイル2>
 ```
 
 行番号を付けて内容を表示する
 
 ```shell
-$ cat -n <ファイル名>
+cat -n <ファイル名>
 ```
 
 引数なしの場合は、標準入力からの入力を待つ (`Ctrl + d` で終了)
 
 ```shell
-$ cat
+cat
 ```
 
 ## <a id="less"></a> less コマンド (ファイル内容を 1 画面ずつ表示)
@@ -665,7 +665,7 @@ less コマンドは、ファイルの内容を **1 画面毎に表示して、�
 (画面のスクロール、表示の終了、キーワード検索などは、Vim と同様のコマンドで操作できる)
 
 ```shell
-$ less <ファイル名>
+less <ファイル名>
 ```
 
 ## <a id="mv"></a> mv (move) コマンド (ファイル移動)
@@ -676,13 +676,13 @@ $ less <ファイル名>
 この場合、引数の最後に指定したディレクトリにファイルが移動される。
 
 ```shell
-$ mv [オプション] <移動元> ... <移動先>
+mv [オプション] <移動元> ... <移動先>
 ```
 
 上書き確認をする
 
 ```shell
-$ mv -i <移動元> ... <移動先>
+mv -i <移動元> ... <移動先>
 ```
 
 ## <a id="ln"></a> ln (link) コマンド (リンクを貼る)
@@ -690,7 +690,7 @@ $ mv -i <移動元> ... <移動先>
 リンクを貼るコマンド
 
 ```shell
-$ ln [オプション] <リンク元ファイル名> <リンク名>
+ln [オプション] <リンク元ファイル名> <リンク名>
 ```
 
 ### <a id="whatLink"></a> リンクとは
@@ -707,18 +707,18 @@ Linux ファイルシステムでは、**ファイルに別名を付ける** こ
 (ディレクトリに対して作成できない)
 
 ```shell
-$ ln <リンク元のファイル名> <リンク名>
+ln <リンク元のファイル名> <リンク名>
 ```
 
 `rm` コマンドでハードリンクを作成したファイルを削除すると、指定したファイル名だけが取り除かれて、ファイルの実体は残ったままとなる。
 
 ```shell
-$ echo Hello > file1
-$ ln file1 file2
-$ rm file1
-$ ls
+echo Hello > file1
+ln file1 file2
+rm file1
+ls
 file2
-$ cat file2
+cat file2
 Hello
 ```
 
@@ -726,8 +726,8 @@ Hello
 つまり、そのファイルに関連づくすべての名前 (ファイル名) が無くなった時に初めて実体も無くなる。
 
 ```shell
-$ rm file2
-$ ls
+rm file2
+ls
 $
 ```
 
@@ -738,14 +738,14 @@ $
 シンボリックリンクは、**リンク先のパス名が書かれた小さな特殊ファイル** であり、**リンク先がファイルの実体であり本物のファイル** である。
 
 ```shell
-$ ln -s <リンク元ファイル名> <リンク名>
+ln -s <リンク元ファイル名> <リンク名>
 ```
 
 シンボリックリンクは、`rm` コマンドで削除できる  
 (リンク先のファイルには何の影響も与えない)
 
 ```shell
-$ rm <リンク名>
+rm <リンク名>
 ```
 
 ※ リンク先のファイルが削除された場合は、リンクが壊れた状態となる。
@@ -754,33 +754,33 @@ $ rm <リンク名>
 
 - 長いパス名を省略する
 
-  長いパスを打たなくても、深い階層のディレクトリにアクセスできるようになる  
-  次の例では、「local/work/code/project/source」という深いディレクトリに source という名前でシンボリックリンクを作成している。
+	長いパスを打たなくても、深い階層のディレクトリにアクセスできるようになる  
+	次の例では、「local/work/code/project/source」という深いディレクトリに source という名前でシンボリックリンクを作成している。
 
-  ```shell
-  $ ln -s local/work/code/project/source source
-  $ cd source    # 深いディレクトリに簡単にアクセスできるようになる
-  ```
+	```shell
+	ln -s local/work/code/project/source source
+	cd source    # 深いディレクトリに簡単にアクセスできるようになる
+	```
 
 - 複数バージョンンのプログラムを共存させることができる
 
-  プログラムをインストールする際に、バージョン番号をディレクトリ名に付加することで複数バージョンを共存させる場合がある。  
-  下の例のようにすることで、Ver.1.0.0 と Ver.1.0.1 をインストールしていて、latest というシンボリックリンクを Ver.1.0.1 をインストールしたタイミングで、Ver.1.0.0 から Ver.1.0.1 に変更するだけで、利用するバージョンを簡単に切り替えることができる。
+	プログラムをインストールする際に、バージョン番号をディレクトリ名に付加することで複数バージョンを共存させる場合がある。  
+	下の例のようにすることで、Ver.1.0.0 と Ver.1.0.1 をインストールしていて、latest というシンボリックリンクを Ver.1.0.1 をインストールしたタイミングで、Ver.1.0.0 から Ver.1.0.1 に変更するだけで、利用するバージョンを簡単に切り替えることができる。
 
-  ```shell
-  $ ls -l
-  合計 0
-  lrwxrwxrwx 1 user user 6 10月  4 00:42 latest -> v1.0.1
-  -rw-rw-r-- 1 user user 0 10月  4 00:42 v1.0.0
-  -rw-rw-r-- 1 user user 0 10月  4 00:42 v1.0.1
-  ```
+	```shell
+	ls -l
+	合計 0
+	lrwxrwxrwx 1 user user 6 10月  4 00:42 latest -> v1.0.1
+	-rw-rw-r-- 1 user user 0 10月  4 00:42 v1.0.0
+	-rw-rw-r-- 1 user user 0 10月  4 00:42 v1.0.1
+	```
 
 ## <a id="find"></a> find コマンド (ディレクトリツリーからファイルを探す)
 
 ディレクトリツリーからファイルを探すコマンド
 
 ```shell
-$ find <検索開始ディレクトリ> <検索条件> <アクション>
+find <検索開始ディレクトリ> <検索条件> <アクション>
 ```
 
 引数で指定した `<検索開始ディレクトリ>` を起点として、再帰的に `<検索条件>` を満たすファイルを探し、`<アクション>` を実行する。  
@@ -788,9 +788,9 @@ $ find <検索開始ディレクトリ> <検索条件> <アクション>
 たとえば次の例では、カレントディレクトリを起点として、「file-1.txt」という名前を持つファイルを探してそのパスを表示する。
 
 ```shell
-$ mkdir -p dir1/doc
-$ touch file-1.txt dir1/doc/file-1.txt
-$ find . -name file-1.txt -print
+mkdir -p dir1/doc
+touch file-1.txt dir1/doc/file-1.txt
+find . -name file-1.txt -print
 ./file-1.txt
 ./dir1/doc/file-1.txt
 ```
@@ -808,7 +808,7 @@ $ find . -name file-1.txt -print
 (bash によるパス名展開が行われ、エラーとなる)
 
 ```shell
-$ find -iname '*.txt' -print
+find -iname '*.txt' -print
 ```
 
 ### <a id="findOption_type"></a> ファイルの種類で探す (-type)
@@ -822,7 +822,7 @@ $ find -iname '*.txt' -print
 次の例は、カレントディレクトリ以下にあるディレクトリのみを表示
 
 ```shell
-$ find . type d -print
+find . type d -print
 .
 ./dir1
 ./dir1/doc
@@ -835,7 +835,7 @@ $ find . type d -print
 次の例は、通常ファイル、かつ、ファイル名が .txt で終わるファイルのみを表示
 
 ```shell
-$ find . -type f -a -name '*.txt' -print
+find . -type f -a -name '*.txt' -print
 ```
 
 ## <a id="locate"></a> locate コマンド (ファイル名データベースからファイルを探す)
@@ -851,7 +851,7 @@ locate コマンドは、初期状態の Linux にはインストールされて
 使用している Linux に locate コマンドがインストールされているか確認する。
 
 ```shell
-$ locate --version
+locate --version
 ```
 
 バージョン情報が表示されなければ、`mlocate` パッケージをインストールする
@@ -875,13 +875,13 @@ $ locate --version
 ### <a id="fileSearchUsingLocate"></a> locate コマンドを使ったファイル検索
 
 ```shell
-$ locate [オプション] <検索パターン>
+locate [オプション] <検索パターン>
 ```
 
 次の例では、「bash」という文字列を含むパス名を検索している。
 
 ```shell
-$ locate bash
+locate bash
 /etc/bash_completion.d
 /etc/bashrc
 /etc/bash_completion.d/bpftool
@@ -893,22 +893,22 @@ $ locate bash
 
 ```shell
 # 拡張子が .sed のファイルを検索
-$ locate '*.sed'
+locate '*.sed'
 
 # 大文字小文字を区別しない (-i / --ignore-case)
-$ locate -i notes
+locate -i notes
 
 # 検索パターンにマッチするファイル名だけを表示 (-b / --basename)
 #  (-b なしの場合、マッチしたディレクトリ名配下のファイルをすべて表示してしまう)
-$ locate -b python
+locate -b python
 
 # 複数の検索パターンを指定 (OR 検索)
 # docs または document とマッチするファイルを検索
-$ locate docs document
+locate docs document
 
 # 複数の検索パターンを指定 (AND 検索, -A / --all)
 # bash と doc を含む文字列とマッチするファイルを検索
-$ locate -A bash doc
+locate -A bash doc
 ```
 
 ## <a id="which"></a> which コマンド (コマンドのフルパスを表示する)
@@ -916,25 +916,25 @@ $ locate -A bash doc
 シェルが実際にどのファイルを実行するか確認する
 
 ```shell
-$ whidh [オプション] <コマンド名>
+whidh [オプション] <コマンド名>
 ```
 
 異なるディレクトリに同名コマンドが複数配置されている場合、すべて表示するには、 `-a` オプションを付ける
 
 ```shell
-$ which -a <コマンド名>
+which -a <コマンド名>
 ```
 
 ## <a id="alias"></a> alias コマンド (既存のコマンドに別名を付ける)
 
 ```shell
-$ alias <名前>='<コマンド>'
+alias <名前>='<コマンド>'
 ```
 
 例えば、`ls -F` に `ls` という名前を付ける場合
 
 ```shell
-$ alias ls='ls -F'
+alias ls='ls -F'
 ```
 
 ### <a id="type"></a> type コマンド (コマンドかエイリアスか確認)
@@ -942,10 +942,10 @@ $ alias ls='ls -F'
 あるコマンドが本当にコマンドなのか、エイリアスなのかを確認するには、type コマンドを使う
 
 ```shell
-$ type ls
+type ls
 ls は 'ls -F' のエイリアスです
 
-$ type cp
+type cp
 cp は /bin/cp です
 ```
 
@@ -954,7 +954,7 @@ cp は /bin/cp です
 一度設定したエイリアスを削除擦るコマンド
 
 ```shell
-$ unalias <設定した名前>
+unalias <設定した名前>
 ```
 
 ### <a id="temporarilyRemoveTheAlias"></a> 一時的にエイリアスを解除する
@@ -962,34 +962,34 @@ $ unalias <設定した名前>
 以下の状態の時の場合、
 
 ```shell
-$ type ls
+type ls
 ls は 'ls -F' のエイリアスです
 ```
 
 1. フルパスで指定する
 
-  ```shell
-  $ /bin/ls
-  ```
+	```shell
+	/bin/ls
+	```
 
 1. <a id="command"></a> command を使う
 
-  ```shell
-  $ command ls
-  ```
+	```shell
+	command ls
+	```
 
 1. 先頭に `\` を付ける
 
-  ```shell
-  $ \ls
-  ```
+	```shell
+	\ls
+	```
 
 ## <a id="locale"></a> locale コマンド (ロケールに関するコマンド)
 
 `-a` オプションを付けることで、システムがサポートしているロケールを一覧表示できる
 
 ```shell
-$ locale -a
+locale -a
 C
 POSIX
 aa_DJ
@@ -1004,7 +1004,7 @@ aa_ER
 `printenv` コマンドで、現在シェルに設定されている環境変数を表示できる。
 
 ```shell
-$ printenv
+printenv
 ```
 
 ## <a id="export"></a> export コマンド (環境変数の設定)
@@ -1013,10 +1013,10 @@ $ printenv
 
 ```shell
 # 書式 (現在のシェル変数を環境変数に適用する場合)
-$ export <シェル変数名>
+export <シェル変数名>
 
 # 書式 (環境変数に値を設定する場合)
-$ export <環境変数名>=<値>
+export <環境変数名>=<値>
 ```
 
 ## <a id="source"></a> source コマンド (ファイルの内容を読み込んで実行)
@@ -1024,7 +1024,7 @@ $ export <環境変数名>=<値>
 設定ファイルを変更後に反映する時に使える。
 
 ```shell
-$ source ~/.bashrc
+source ~/.bashrc
 ```
 
 ## <a id="groups"></a> groups コマンド (所属グループを確認)
@@ -1032,7 +1032,7 @@ $ source ~/.bashrc
 自分が所属しているグループを確認する。
 
 ```shell
-$ groups
+groups
 yuta wheel
 ```
 
