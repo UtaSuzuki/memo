@@ -46,7 +46,7 @@
 
 	文字列を任意の区切り文字で分割し、配列として返す
 
-	```
+	```vba
 	Split("A-B-C", "-")    ' > [A, B, C]
 	```
 
@@ -54,7 +54,7 @@
 
 	配列の最大インデックスを返す
 
-	```
+	```vba
 	Dim A(3) As String
 	MsgBox UBound(A)      ' > 3
 	```
@@ -66,7 +66,7 @@
 
 	各種オブジェクトの名前
 
-	```
+	```vba
 	Workbook.Name
 	Worksheet.Name
 	```
@@ -75,7 +75,7 @@
 
 	文字色を 1 ～ 56 のインデックスから指定
 
-	```
+	```vba
 	RangeObj.Font.ColorIndex(番号)
 	```
 
@@ -88,7 +88,7 @@
 
 	`Worksheets` コレクションの `Add` メソッドを使用
 
-	```
+	```vba
 	WorksheetsColllection.Add
 	```
 
@@ -216,7 +216,7 @@ End Sub
 - データ型一覧
 
 	型名 | 表記 | 初期値 | 説明
-	---|---|---
+	---|---|---|---
 	ブール型 | Boolean | False | True または False
 	長整数型 | Long | 0 | -2,147,483,648 ～ 2,147,483,647 の整数
 	倍精度浮動小数点数型 | Double | 0 | 負の値 : 約 -1.8×10<sup>308</sup> ～ -4.0×10<sup>-324</sup><br>正の値 : 約 4.9×10<sup>-324</sup> ～ 1.8×10<sup>308</sup>
@@ -230,7 +230,7 @@ End Sub
 <summary>あまり使わない変数型</summary>
 
 型名 | 表記 | 初期値 | 説明
----|---|---
+---|---|---|---
 バイト型 | Byte | 0 | 0 - 255 の整数
 整数 | Integer | 0 | -32,768 - 32,767 の整数
 通貨型 | Currency | 0 | -922,337,203,685,477.5808 - 922,337,203,685,477.5807 の固定小数点数
@@ -239,8 +239,8 @@ End Sub
 
 - 主なオブジェクト / コレクション
 
-	<span style="color:red">値格納時は `Set オブジェクト変数名` とする</span>
-	
+	<span style="color: red">値格納時は `Set オブジェクト変数名` とする</span>
+
 	オブジェクト / コレクション | 内容
 	---|---
 	Range コレクション | セル, 行, 列 の 1 つ以上のセル範囲を含む選択範囲または 3-D 範囲
@@ -261,7 +261,7 @@ End Sub
 
 	同種のオブジェクトをまとめたもの (コレクションもオブジェクトの一種)。
 
-	```
+	```vba
 	' コレクションから任意のオブジェクトを指定
 	' (最小インデックス : 1)
 	コレクション名.Item(インデックス)    ' 例: Workbooks.Item(1)
@@ -300,7 +300,7 @@ End Sub
 
 - 配列
 
-	```
+	```vba
 	' 構文
 	Dim 静的配列名([最小インデックス To ]最大インデックス) As データ型
 	Dim 動的配列名() As データ型
@@ -324,7 +324,7 @@ End Sub
 
 - If ～ Then ～ Else
 
-	```
+	```vba
 	If 条件式 Then
 	    処理
 	ElseIf 条件式 Then
@@ -336,7 +336,7 @@ End Sub
 
 - Select Case
 
-	```
+	```vba
 	Select Case 値
 	    Case 条件
 	        処理
@@ -358,7 +358,7 @@ End Sub
 
 - For Next
 
-	```
+	```vba
 	For インデックス = 初期値 To 最終値( Step 加算値)
 	    処理
 	    (If 条件 Then Exit For)
@@ -367,7 +367,7 @@ End Sub
 
 - For Each
 
-	```
+	```vba
 	For Each 要素 In コレクション
 	    処理
 	    (If 条件 Then Exit For)
@@ -385,7 +385,7 @@ End Sub
 
 - Do .. Loop
 
-	```
+	```vba
 	' 繰り返し前に条件判定
 	Do 条件式
 	    処理
