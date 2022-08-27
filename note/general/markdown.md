@@ -1,5 +1,6 @@
 # Markdown の使い方
 
+
 ## 目次
 
 - [レイアウト設定](#setting_layout)
@@ -12,6 +13,8 @@
 
 - [コードブロック](#code_block)
 
+- [インラインコード](#inline_code)
+
 - [フォントの装飾](#font_decoration)
 
 - [リンク](#link)
@@ -23,6 +26,14 @@
 - [画像の挿入](#image)
 
 - [HTML 形式の定義リスト](#html)
+
+- [チャックボックス](#check_box)
+
+- [引用](#quotation)
+
+- [折り畳み](#folding)
+
+- [上付き / 下付き](#superscript_subscript)
 
 
 ## <a id="setting_layout"></a> レイアウト設定
@@ -42,20 +53,30 @@ layout: default
 
 ```
 # headding
+
 ## headding
+
 ### headding
+
 #### headding
+
 ##### headding
+
 ###### headding
 ```
 
-vvv 実行例 vvv
+vvv 実行結果 vvv
 
 # hedding
+
 ## hedding
+
 ### hedding
+
 #### hedding
+
 ##### hedding
+
 ###### hedding
 
 ^^^ ここまで ^^^
@@ -71,7 +92,7 @@ aaa<br>bbb<br>ccc<br>
 ddd<br>eee<br>fff<br>
 ```
 
-vvv 実行例 vvv
+vvv 実行結果 vvv
 
 AAA  BBB  CCC  
 DDD  EEE  FFF
@@ -81,11 +102,12 @@ ddd<br>eee<br>fff<br>
 
 ^^^ ここまで ^^^
 
+
 ## <a id="table"></a> 表
 
 ```
 Table | 1 | 2
-:---:|:---:|:---:
+:---|:---:|---:
 Record1 | item1 | item2
 Record2 | item1 | item2
 Record3 | item1 | item2
@@ -93,10 +115,10 @@ Record4 | item1 | item2
 Record5 | item1 | item2
 ```
 
-vvv 実行例 vvv
+vvv 実行結果 vvv
 
 Table | 1 | 2
-:---:|:---:|:---:
+:---|:---:|---:
 Record1 | item1 | item2
 Record2 | item1 | item2
 Record3 | item1 | item2
@@ -104,6 +126,7 @@ Record4 | item1 | item2
 Record5 | item1 | item2
 
 ^^^ ここまで ^^^
+
 
 ## <a id="code_block"></a> コードブロック
 
@@ -115,7 +138,7 @@ $ ls
 ```
 ~~~
 
-vvv 実行例 vvv
+vvv 実行結果 vvv
 
 ```sh
 $ pwd
@@ -125,22 +148,44 @@ $ ls
 
 ^^^ ここまで ^^^
 
+
+## <a id="inline_code"></a> インラインコード
+
+~~~
+インラインコードは `こう` なる
+~~~
+
+vvv 実行結果 vvv
+
+インラインコードは `こう` なる
+
+^^^ ここまで ^^^
+
+
 ## <a id="font_decoration"></a> テキストの装飾
 
 ```
 **ボールド**
+
 __ボールド__
+
 _斜体(イタリック)_
+
 ~~取消し~~
+
 `キーワード`
 ```
 
-vvv 実行例 vvv
+vvv 実行結果 vvv
 
 **ボールド**
+
 __ボールド__
+
 _斜体(イタリック)_
+
 ~~取消し~~
+
 `キーワード`
 
 ^^^ ここまで ^^
@@ -149,18 +194,20 @@ _斜体(イタリック)_
 ## <a id="link"></a> リンク
 
 ```
-[別ページ](<PATH>)
-[ページ内見出し部](#<見出し名 または id>)
-[外部サイト](<URL>)
+[別ページへのリンク](markdown.md)
+
+[ページ内見出し部へのリンク](#link)
+
+[外部サイトへのリンク](http://www.github.com/)
 ```
 
-vvv 実行例 vvv
+vvv 実行結果 vvv
 
-- [別ページへのリンク](another-page)
+[別ページへのリンク](markdown.md)
 
-- [この見出しへのリンク](#link)
+[ページ内見出し部へのリンク](#link)
 
-- [外部サイトへのリンク](http://www.github.com/)
+[外部サイトへのリンク](http://www.github.com/)
 
 ^^^ ここまで ^^^
 
@@ -183,7 +230,7 @@ vvv 実行例 vvv
 	1. 番号あり
 ```
 
-vvv 実行例 vvv
+vvv 実行結果 vvv
 
 * 番号なし
 	インデントすることで、メッセージ付加
@@ -210,7 +257,7 @@ or
 ***
 ```
 
-vvv 実行例 vvv
+vvv 実行結果 vvv
 
 ---
 or
@@ -226,7 +273,7 @@ or
 ![](https://guides.github.com/activities/hello-world/branching.png)
 ```
 
-vvv 実行例 vvv
+vvv 実行結果 vvv
 
 ![](https://assets-cdn.github.com/images/icons/emoji/octocat.png)
 ![](https://guides.github.com/activities/hello-world/branching.png)
@@ -249,7 +296,7 @@ vvv 実行例 vvv
 </dl>
 ```
 
-vvv 実行例 vvv
+vvv 実行結果 vvv
 
 <dl>
 <dt>Name</dt>
@@ -261,6 +308,78 @@ vvv 実行例 vvv
 <dt>Color</dt>
 <dd>Green</dd>
 </dl>
+
+^^^ ここまで ^^^
+
+
+## <a id="check_box"></a> チェックボックス
+
+```
+- [ ] aaa
+- [x] bbb
+- [ ] ccc
+```
+
+vvv 実行結果 vvv
+
+- [ ] aaa
+- [x] bbb
+- [ ] ccc
+
+^^^ ここまで ^^^
+
+
+## <a id="quotation"></a> 引用
+
+```
+> xxx
+```
+
+vvv 実行結果 vvv
+
+> xxx
+
+^^^ ここまで ^^^
+
+
+## <a id="folding"></a> 折り畳み
+
+```
+<details>
+<summary>xxx</summary>
+
+aaaaaaaaaaaaaaaaaaaa
+bbbbbbbbbbbbbbbbbbbb
+cccccccccccccccccccc
+</details>
+```
+
+vvv 実行結果 vvv
+
+<details>
+<summary>xxx</summary>
+
+aaaaaaaaaaaaaaaaaaaa
+bbbbbbbbbbbbbbbbbbbb
+cccccccccccccccccccc
+</details>
+
+^^^ ここまで ^^^
+
+
+## <a id="superscript_subscript"></a> 上付き文字 / 下付き文字
+
+```
+上付き文字は<sup>こうする</sup>
+
+下付き文字は<sub>こうする</sub>
+```
+
+vvv 実行結果 vvv
+
+上付き文字は<sup>こうする</sup>
+
+下付き文字は<sub>こうする</sub>
 
 ^^^ ここまで ^^^
 
