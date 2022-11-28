@@ -52,11 +52,13 @@
 
 ### 読込み順
 
+以下のコマンドで表示されたディレクトリの順にファイルを読み込む
+
 ```vi
 :set runtimepath
 ```
 
-で表示された順にファイルを読込みを行う GVim でのデフォルト (?)
+GVim でのデフォルト (?)
 
 ```
 runtimepath=~/vimfiles,C:\Program Files (x86)\Vim/vimfiles,C:\Program Files (x86)\Vim\vim82,C:Program Files (x86)\Vim\vimfiles\after,~/vimfiles/after
