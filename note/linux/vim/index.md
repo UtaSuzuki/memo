@@ -5,6 +5,8 @@
 
 - [文字コード変更](#changeCharSet)
 
+- [各種定義ファイル](#runCommandFiles)
+
 
 ## <a id="changeCharSet"></a> 文字コード
 
@@ -40,5 +42,25 @@
 
 # short comannd
 :se fenc=[char set]
+```
+
+## <a id="runCommandFiles"></a> 各種定義ファイル
+
+### 参考
+
+- [Qiita: vimで読み込まれるファイルについて](https://qiita.com/okamos/items/8279154e20249247f78f)
+
+### 読込み順
+
+以下のコマンドで表示されたディレクトリの順にファイルを読み込む
+
+```vi
+:set runtimepath
+```
+
+GVim でのデフォルト (?)
+
+```
+runtimepath=~/vimfiles,C:\Program Files (x86)\Vim/vimfiles,C:\Program Files (x86)\Vim\vim82,C:Program Files (x86)\Vim\vimfiles\after,~/vimfiles/after
 ```
 
