@@ -1,10 +1,8 @@
 # Twitter
 
-
 ## 目次
 
 - [参考](#references)
-
 
 ## <a id="references"></a> 参考
 
