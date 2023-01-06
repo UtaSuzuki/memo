@@ -66,5 +66,7 @@ runtimepath=~/vimfiles,C:\Program Files (x86)\Vim/vimfiles,C:\Program Files (x86
 
 ## <a id="colorScheme"></a> カラースキーマ
 
+デフォルトカラースキーマ: `/usr/share/vim/vim81/colors/*.vim`
+
 ![Vim カラーコード一覧](img/vimColorSchemes.png)
 
