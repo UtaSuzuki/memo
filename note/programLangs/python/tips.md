@@ -2,7 +2,24 @@
 
 ## 目次
 
+- [仮想環境](#venv)
 - [バージョン確認](#verChk)
+
+## <a id="venv"></a> 仮想環境
+
+```shell
+# 新規作成
+$ python3 -m venv [newEnvName]
+
+# Activate
+$ source [envName]/bin/activate
+
+# パッケージのインストール
+$ pip install [packageName]
+
+# Deactivate
+$ deactivate
+```
 
 ## <a id="verChk"></a> バージョンを確認
 
