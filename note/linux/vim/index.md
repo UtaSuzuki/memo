@@ -4,8 +4,8 @@
 ## 目次
 
 - [文字コード変更](#changeCharSet)
-
 - [各種定義ファイル](#runCommandFiles)
+- [カラースキーマ](#colorScheme)
 
 
 ## <a id="changeCharSet"></a> 文字コード
@@ -63,4 +63,8 @@ GVim でのデフォルト (?)
 ```
 runtimepath=~/vimfiles,C:\Program Files (x86)\Vim/vimfiles,C:\Program Files (x86)\Vim\vim82,C:Program Files (x86)\Vim\vimfiles\after,~/vimfiles/after
 ```
+
+## <a id="colorScheme"></a> カラースキーマ
+
+![Vim カラーコード一覧](img/vimColorSchemes.png)
 
