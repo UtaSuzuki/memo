@@ -224,7 +224,6 @@ td {
 
 /* Wrapper */
 .wrapper {
-    width:960px;
     overflow: visible;
 }
 
@@ -440,8 +439,8 @@ a.buttons:hover {
 /* Section - for main page content */
 
 section {
-    width:800px;
-    float:right;
+    float:left;
+    padding-left:10px;
     padding-bottom:50px;
 }
 
@@ -449,10 +448,9 @@ section {
 /* Footer */
 
 footer {
-    width:170px;
     clear: both;
     bottom:10px;
-    padding-left: 50px;
+    text-align: center;
 }
 
 @media print, screen and (max-width: 960px) {
