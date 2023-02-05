@@ -2,6 +2,6 @@
 
 ## 目次
 
-- [星空案内人](starrySkyNavigator/index.md)
-- [星空辞典](starrySkyDictionary/index.md)
+- [星空案内人](星空案内人/index.md)
+- [辞典](辞典/index.md)
 
