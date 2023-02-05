@@ -225,8 +225,15 @@ td {
 /* Wrapper */
 .wrapper {
     width:960px;
+    overflow: visible;
 }
 
+
+/* top-menu */
+
+#top-menu {
+    position: fixed;
+}
 
 /* Header */
 header {
@@ -443,8 +450,7 @@ section {
 
 footer {
     width:170px;
-    float:left;
-    position:fixed;
+    clear: both;
     bottom:10px;
     padding-left: 50px;
 }
