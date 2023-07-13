@@ -4,6 +4,7 @@
 ## 目次
 
 - [初期設定](initSetting.md)
+- [Ubuntu のアップデート手順](howtoUpdate.md)
 - [apt コマンドの使い方](cmd_apt.md)
 - [root パスワードの設定](#rootPass)
 
